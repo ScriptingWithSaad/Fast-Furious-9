@@ -1,0 +1,345 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: fast;
+    src: url('../assets/images/fast.otf');
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f6f6;
+}
+
+header {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    border: 4px solid #fff;
+    box-shadow: 0px 0px 60px rgb(80, 80, 80);
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/images/fast.jpg')no-repeat center center/cover;
+    z-index: -1;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 30%);
+    height: 100%;
+    top: 0;
+    background: linear-gradient(90deg, #000, #000, #000, #160d0ee3, transparent);
+    z-index: -1;
+    opacity: .97;
+}
+
+nav {
+    width: 90%;
+    height: 10%;
+    /* border: 1px solid red; */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+nav .logo {
+    width: 30%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    font-size: 30px;
+    font-family: fast;
+}
+
+nav ul {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    padding: 10px;
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all .3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: rgb(185, 184, 184);
+}
+
+section {
+    width: 90%;
+    height: 80%;
+    /* border: 1px solid red; */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 5;
+}
+
+section .content {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section .content h1 {
+    color: #fff;
+    font-family: fast;
+    font-size: 31px;
+}
+
+section .content h2 {
+    color: #fff;
+    font-family: fast;
+    font-size: 31px;
+}
+
+section .content .pra {
+    font-family: fast;
+    color: #fff;
+    font-size: 14px;
+    margin: 10px 0px;
+}
+
+section .content .cast {
+    display: flex;
+}
+
+section .content .cast a {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    margin: 10px 10px 15px 0px;
+}
+
+section .content .cast a img {
+    width: 100%;
+    height: 100%;
+}
+
+section .content .btn {
+    display: flex;
+}
+
+section .content .btn button {
+    padding: 8px 15px;
+    border-radius: 30px;
+    margin: 10px 10px 10px 0px;
+    background: blue;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid blue;
+    cursor: pointer;
+    transition: all .6s ease-in-out;
+}
+
+section .content .btn button:nth-child(1) {
+    background: #fff;
+    color: blue;
+}
+
+section .content .btn button:nth-child(1):hover {
+    background: blue;
+    color: #fff;
+}
+
+section .content .btn button:nth-child(2):hover {
+    background: #fff;
+    color: blue;
+}
+
+section .content button .bi {
+    font-size: 20px;
+}
+
+footer {
+    width: 90%;
+    height: 10%;
+    /* border: 1px solid red; */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+footer .social {
+    display: flex;
+}
+
+footer .social a {
+    font-size: 14px;
+    font-weight: lighter;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+    transition: all .3s ease-in-out;
+}
+
+footer .social a:hover {
+    color: rgb(185, 184, 184);
+}
+
+nav ul .menu {
+    position: absolute;
+    width: 200px;
+    height: 350px;
+    /* border: 1px solid red; */
+    top: 30%;
+    right: -20%;
+    border-radius: 15px 0px 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 999;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+nav ul li:hover .menu {
+    right: 0%;
+    opacity: 1;
+}
+
+nav ul .menu::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(185, 184, 184, .2);
+    backdrop-filter: blur(5px);
+    border-radius: 15px 0px 0px 15px;
+    z-index: -1;
+}
+
+nav ul .menu a {
+    padding: 15px 0px;
+    transition: all .3s ease-in-out;
+}
+
+nav ul .menu a:hover {
+    color: rgb(185, 184, 184);
+}
+
+@media(max-width: 722px) {
+    nav {
+        flex-direction: column;
+    }
+    nav .logo {
+        justify-content: center;
+    }
+    nav ul {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 572px) {
+    section .content .pra {
+        font-size: 13px;
+    }
+}
+
+@media(max-width: 541px) {
+    nav ul li {
+        padding: 7px;
+    }
+    nav ul li a {
+        font-size: 12px;
+    }
+    .content h2 {
+        font-size: 25px;
+    }
+    .content h1 {
+        font-size: 25px;
+    }
+    section .content .pra {
+        font-size: 9px;
+    }
+    section .content .cast {
+        flex-wrap: wrap;
+    }
+    section .content .cast a {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media(max-width: 411px) {
+    nav ul li a {
+        font-size: 10px;
+    }
+    section .content h1 {
+        font-size: 22px;
+    }
+    section .content h2 {
+        font-size: 22px;
+    }
+    section .content .pra {
+        font-size: 8px;
+    }
+}
+
+@media(max-width: 360px) {
+    nav ul li {
+        padding: 5px;
+    }
+    nav ul li a {
+        font-size: 8px;
+    }
+    section .content h1 {
+        font-size: 17px;
+    }
+    section .content h2 {
+        font-size: 17px;
+    }
+    section .content .pra {
+        font-size: 6px;
+    }
+    section .content .cast a {
+        width: 20px;
+        height: 20px;
+    }
+    section .content .btn button {
+        padding: 2px 4px;
+        font-size: 9px;
+    }
+}
